@@ -16,7 +16,6 @@ app.get('/contact', (req, res) => {
 
 app.get('/hello', (req, res) => {
     res.status(200)
-
     res.send('<h1>GET - Hello World</h1>');
 })
 
