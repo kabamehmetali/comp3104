@@ -1,11 +1,16 @@
+// Mehmet Ali KABA
+// 101453763
+
+
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-// Middleware to parse request bodies (form data)
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Serve a simple HTML page with two forms at the root
+
 app.get('/', (req, res) => {
   res.send(`
     <h1>Welcome to Exercise 04</h1>
@@ -39,19 +44,18 @@ app.get('/', (req, res) => {
   `);
 });
 
-// GET /hello endpoint
+
 app.get('/hello', (req, res) => {
   res.send('<h2>Hello Express JS</h2>');
 });
 
-// GET /user with query parameters
 app.get('/user', (req, res) => {
   const firstname = req.query.firstname || 'Pritesh';
   const lastname = req.query.lastname || 'Patel';
   res.json({ firstname, lastname });
 });
 
-// POST /user with form data from HTML form
+
 app.post('/user', (req, res) => {
   const firstname = req.body.firstname;
   const lastname = req.body.lastname;
@@ -63,13 +67,13 @@ app.post('/user', (req, res) => {
   `);
 });
 
-// POST /user with path parameters
+
 app.post('/user/:firstname/:lastname', (req, res) => {
   const { firstname, lastname } = req.params;
   res.json({ firstname, lastname });
 });
 
-// Start server
+
 const port = 8080;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
