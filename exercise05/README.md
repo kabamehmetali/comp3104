@@ -1,4 +1,4 @@
 #### DevOps – Developer Operations
 
-- Pritesh 
-- Patel
+- Mehmet Ali KABA 
+- 101453763
